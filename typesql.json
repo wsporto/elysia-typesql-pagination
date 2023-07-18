@@ -1,0 +1,5 @@
+{
+    "databaseUri": "mysql://root:password@localhost/classicmodels",
+    "sqlDir": "./src/sqls",
+    "target": "node"
+}

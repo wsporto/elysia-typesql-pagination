@@ -6,10 +6,13 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "elysia": "latest",
+    "mysql2": "^3.5.2"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/node": "^20.4.2",
+    "bun-types": "latest",
+    "typesql-cli": "^0.5.4"
   },
   "module": "src/index.js"
 }
