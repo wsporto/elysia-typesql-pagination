@@ -79,21 +79,17 @@ In the src/index.ts, update the Elysia server to create the `products` endpoint:
 
 const app = new Elysia()
   .get("/", () => "Hello Elysia")
-+  .get('/products', ({ query }) => {
-+    const pageSize = query.pageSize || 10;
-+    const pageIndex = query.pageIndex || 0;
-+    return selectProducts(conn, {
-+      offset: pageIndex * pageSize,
-+      limit: pageSize
-+    });
-+  },
++.get('/products', ({ query }) => selectProducts(conn, {
++    offset: query.pageSize * query.pageIndex,
++    limit: query.pageSize
++  }),
 +    {
 +      query: t.Object({
 +        pageIndex: t.Numeric(),
 +        pageSize: t.Numeric()
 +      })
 +    }
-+)
++  )
     .listen(3000);
 
 console.log(

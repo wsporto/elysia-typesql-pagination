@@ -11,14 +11,10 @@ const conn = await createConnection({
 
 const app = new Elysia()
   .get("/", () => "Hello Elysia")
-  .get('/products', ({ query }) => {
-    const pageSize = query.pageSize || 10;
-    const pageIndex = query.pageIndex || 0;
-    return selectProducts(conn, {
-      offset: pageIndex * pageSize,
-      limit: pageSize
-    });
-  },
+  .get('/products', ({ query }) => selectProducts(conn, {
+    offset: query.pageSize * query.pageIndex,
+    limit: query.pageSize
+  }),
     {
       query: t.Object({
         pageIndex: t.Numeric(),
