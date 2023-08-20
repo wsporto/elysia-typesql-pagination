@@ -58,7 +58,7 @@ PS: A scaffolding query can be generated with the typesql command:
 Now run the command bellow and TypeSQL will generate a type-safe API to execute the query.
 
 ```bash
-bunx typesql-cli compile --watch
+bunx typesql compile --watch
 ```
 
 # Into the code
