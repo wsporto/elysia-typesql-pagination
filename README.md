@@ -27,7 +27,7 @@ docker run -d --name classicmodels -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password 
 Use the `typesql init` to create the `typesql.json` configuration file.
 
 ```bash
-bunx typesql-cli init
+bunx typesql init
 ```
 
 Update the `databaseUri` and `sqlDir` in the `typesql.json` file:
